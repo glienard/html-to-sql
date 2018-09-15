@@ -8,12 +8,16 @@ Extract word by word all text and meta data from an html page.  Save billions of
 ### Tags
 #### a
 *href*: string
+
 *rel=nofollow*: NoFollowLink=true
+
 *TagA*: true
   
 #### area
 *href*: string
+
 *rel=nofollow*: NoFollowLink=true
+
 *TagArea*: true
 
 #### b

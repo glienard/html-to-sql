@@ -12,8 +12,17 @@ Specific page wide properties independent of words used:
 * Lang: string
 
 ### Links
-Dictionary<string, string>: List of Uris with their LinkType
-
+Dictionary<string, string>: List of urls found with their LinkType
+* LinkTypes:
+  * base
+  * http-equiv
+  * frame
+  * iframe
+  * a
+  * area
+  * canonical
+  * img
+  
 ### Words
 Object that stores all words, word by word, in order of appearance with their enclosed tags.
 * *Word*: string cannot contain whitespace. It cannot contain punctuation marks except for hyphens and dots if they are immediatly followed by another character.  eg 
@@ -21,12 +30,28 @@ Object that stores all words, word by word, in order of appearance with their en
   * **finished.**: finished 
   * **mother-in-law**: mother-in-law
   * **mother- and I**: mother
-* PunctuationMarkBefore: nchar(1) string: if a punctuation mark proceeds the word, store it here (only the last)
-* PunctuationMarkAfter: nchar(1) string: if a punctuation mark comes after the word, store it here (only the first)
-* *TagH1*: bool: is enclosed in (parent) H1 tags
-* *TagH2*: bool: is enclosed in (parent) H2 tags
+* *PunctuationMarkBefore*: nchar(1) string: if a punctuation mark proceeds the word, store it here (only the last)
+* *PunctuationMarkAfter*: nchar(1) string: if a punctuation mark comes after the word, store it here (only the first)
+* *TagTitle*: bool: is enclosed in the head title tag
+* *TagMetaDescription*: bool: is enclosed in the meta tag
+* *TagMetaKeywords*: bool: is enclosed in the meta tag
+* *TagA*: bool: is enclosed in (parent) A tag
+* *Href*: string: stores the href of A tags, AREA tags
+* *TagArea*: bool: is enclosed in (parent) AREA tag
+* *TagH1*: bool: is enclosed in (parent) H1 tag
+* *TagH2*: bool: is enclosed in (parent) H2 tag
+* *TagH3*: bool: is enclosed in (parent) H3 tag
+* *TagH4*: bool: is enclosed in (parent) H4 tag
+* *TagH5*: bool: is enclosed in (parent) H5 tag
+* *TagH6*: bool: is enclosed in (parent) H6 tag
+* *TagB*: bool: is enclosed in (parent) B tag
+... (see Extracted Data below)
+* *isHidden*: bool: if text is hidden, this should be true
+  * css display:none
+  * css display:hidden
 
-## Data to extract
+
+## Extracted Data
 ### HEAD
 #### base
 * *href*: add to Links with Type base. Use only the first one (if there are multiple). 
@@ -57,12 +82,12 @@ Object that stores all words, word by word, in order of appearance with their en
 
 ### BODY
 #### a
-* *href*: add to Links with type a
+* *href*: add to Links with type a and to Word.href
 * *rel=nofollow*: NoFollowLink=true
 * *TagA*: true
   
 #### area
-* *href*: add to links with type area
+* *href*: add to links with type area and to Word.href
 * *rel=nofollow*: NoFollowLink=true
 * *TagArea*: true
 
@@ -96,7 +121,7 @@ Object that stores all words, word by word, in order of appearance with their en
 * *src*: Add to Links with type iframe
   
 #### img
-* *src*: add to Links with type img
+* *src*: add to Links with type img and to Word.Href
 * *Alt*: TagImgAlt=true
 
 #### ins

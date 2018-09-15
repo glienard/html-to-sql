@@ -36,6 +36,10 @@ Dictionary<string, string>: List of Uris with their LinkType
 * *none*: Page.NoIndex=true & Page.NoFollow=true
 * *nosnippet*: Page.NoSnippet=true
 * *nocache*: Page.NoArchive=true
+#### meta language or language-content
+< meta name="language" content="en" >
+< meta name="language-content" content="en" >
+*Page.Lang* = content.
 
 #### frame
 * *src*: add to Links with type frame
@@ -61,34 +65,57 @@ Dictionary<string, string>: List of Uris with their LinkType
 * *TagBig*: true
   
 #### button
-*TagButton*: true
+* *TagButton*: true
   
 #### del
-*TagDel*: true
+* *TagDel*: true
   
 #### dfn
-*TagDfn*: true
+* *TagDfn*: true
   
-  #### em
-*TagEm*: true
+#### em
+* *TagEm*: true
 
 #### h1 - h6
-*TagH[1-6]*:true
-
+* *TagH[1-6]*:true
+#### html
+* *lang*: Page.Lang
 #### i
-*TagI*:true
+* *TagI*:true
 #### iframe
-*src*: Add to Links with type iframe
+* *src*: Add to Links with type iframe
   
 #### img
-*src*: add to Links with type img
-*Alt*: TagImgAlt=true
+* *src*: add to Links with type img
+* *Alt*: TagImgAlt=true
 
 #### ins
-*TagIns*: true
+* *TagIns*: true
+
+#### link
+< link rel="canonical" href="http://www.seopageoptimizer.com/" />
+* *canonical*: Add to Links with type canonical 
 
 #### mark
-*TagMark*: true
+* *TagMark*: true
+
+#### optgroup
+* *label*: TagOptGroup=true
+#### option
+* *value*: TagOption=true
+#### small
+* *TagSmall*:true
+#### strike
+* *TagStrike*:true
+#### strong
+* *TagStrong*:true
+#### sub
+* *TagSub*:true
+#### sup
+* *TagSup*:true
+#### u
+* *TagU*:true
+
 
 
 

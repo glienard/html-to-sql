@@ -15,6 +15,16 @@ Specific page wide properties independent of words used:
 Dictionary<string, string>: List of Uris with their LinkType
 
 ### Words
+Object that stores all words, word by word, in order of appearance with their enclosed tags.
+* *Word*: string cannot contain whitespace. It cannot contain punctuation marks except for hyphens and dots if they are immediatly followed by another character.  eg 
+  * **M.A.S.H.**: M.A.S.H
+  * **finished.**: finished 
+  * **mother-in-law**: mother-in-law
+  * **mother- and I**: mother
+* PunctuationMarkBefore: nchar(1) string: if a punctuation mark proceeds the word, store it here (only the last)
+* PunctuationMarkAfter: nchar(1) string: if a punctuation mark comes after the word, store it here (only the first)
+* *TagH1*: bool: is enclosed in (parent) H1 tags
+* *TagH2*: bool: is enclosed in (parent) H2 tags
 
 ## Data to extract
 ### HEAD

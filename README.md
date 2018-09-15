@@ -4,11 +4,12 @@ Extract word by word all important text and meta data from an html page.  Save b
 ## Result
 ### Page
 Specific page wide properties independent of words used:
-NoFollow: bool default false
-NoIndex: bool default false
-NoArchive: bool default false
-NoImageIndex: bool default false
-NoSnippet: bool default false
+* NoFollow: bool default false
+* NoIndex: bool default false
+* NoArchive: bool default false
+* NoImageIndex: bool default false
+* NoSnippet: bool default false
+* Lang: string
 
 ### Links
 Dictionary<string, string>: List of Uris with their LinkType
@@ -18,50 +19,46 @@ Dictionary<string, string>: List of Uris with their LinkType
 ## Data to extract
 ### HEAD
 #### base
-*href*: add to Links with Type base. Use only the first one (if there are multiple). 
+* *href*: add to Links with Type base. Use only the first one (if there are multiple). 
 #### title
-*TagTitle*: true
+* *TagTitle*: true
 #### meta description
-*TagMetaDescription*: true
+* *TagMetaDescription*: true
 #### meta keywords
-*TagMetaKeywords*:true
+* *TagMetaKeywords*:true
 #### meta http-equiv
 < meta http-equiv="refresh" content="30;URL=http://www.keyboost.com" >: add to Links with Type http-equiv
 #### meta robots
 < meta name="robots" content="noindex, nofollow" >: sets page properties depending on content:
-*noindex*: Page.NoIndex=true
-*nofollow*: Page.NoFollow=true
-*noarchive*: Page.NoArchive=true
-*none*: Page.NoIndex=true & Page.NoFollow=true
-*nosnippet*: Page.NoSnippet=true
-*nocache*: Page.NoArchive=true
+* *noindex*: Page.NoIndex=true
+* *nofollow*: Page.NoFollow=true
+* *noarchive*: Page.NoArchive=true
+* *none*: Page.NoIndex=true & Page.NoFollow=true
+* *nosnippet*: Page.NoSnippet=true
+* *nocache*: Page.NoArchive=true
 
 #### frame
-*src*: add to Links with type frame
+* *src*: add to Links with type frame
 
 
 ### BODY
 #### a
-*href*: add to Links with type a
-
-*rel=nofollow*: NoFollowLink=true
-
-*TagA*: true
+* *href*: add to Links with type a
+* *rel=nofollow*: NoFollowLink=true
+* *TagA*: true
   
 #### area
-*href*: add to links with type area
-
-*rel=nofollow*: NoFollowLink=true
-
-*TagArea*: true
+* *href*: add to links with type area
+* *rel=nofollow*: NoFollowLink=true
+* *TagArea*: true
 
 #### b
-*TagBold*: true
+* *TagBold*: true
   
 
   
 #### big
-*TagBig*: true
+* *TagBig*: true
   
 #### button
 *TagButton*: true

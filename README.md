@@ -45,7 +45,7 @@ Object that stores all words, word by word, in order of appearance with their en
 * *TagH5*: bool: is enclosed in (parent) H5 tag
 * *TagH6*: bool: is enclosed in (parent) H6 tag
 * *TagB*: bool: is enclosed in (parent) B tag
-... (see Extracted Data below)
+* ... (see Extracted Data below)
 * *isHidden*: bool: if text is hidden, this should be true
   * css display:none
   * css display:hidden

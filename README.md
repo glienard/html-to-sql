@@ -1,11 +1,22 @@
 # html-to-sql
-Extract word by word all text and meta data from an html page.  Save billions of html pages in a structured way in a sql database so you can perform analysis on words and tags,  minimizing storage space required and maximizing performance and still be able to reconstruct the html page with the same text, including punctuation marks and tags. 
+Extract word by word all important text and meta data from an html page.  Save billions of html pages in a structured way in a sql database so you can perform analysis on words and tags,  minimizing storage space required and maximizing performance and still be able to reconstruct the html page with the same text, including punctuation marks and tags. 
 
 ## Result
 
 ## Data to extract
+### HEAD
+#### base
+*href*: url: should be added to every other href string when relative. Use only the first one (if there are multiple). 
+#### title
+*TagTitle*: true
+#### description
+*TagMetaDescription*: true
+#### keywords
+*TagMetaKeywords*:true
+#### http redirect
+< meta http-equiv="refresh" content="30;URL=http://www.keyboost.com" >
 
-### Tags
+### BODY
 #### a
 *href*: string
 
@@ -23,8 +34,7 @@ Extract word by word all text and meta data from an html page.  Save billions of
 #### b
 *TagBold*: true
   
-#### base
-*href*: string url: should be extracted as first and added to every other href string when relative. Use only when in <head> tag and the first one (if there are multiple). 
+
   
 #### big
 *TagBig*: true
@@ -38,6 +48,9 @@ Extract word by word all text and meta data from an html page.  Save billions of
 #### dfn
 *TagDfn*: true
   
+  #### em
+*TagEm*: true
+
 #### h1 - h6
 *TagH[1-6]*:true
 
@@ -46,3 +59,14 @@ Extract word by word all text and meta data from an html page.  Save billions of
   
 #### img
 *Alt*: TagImgAlt=true
+
+#### ins
+*TagIns*: true
+
+#### mark
+*TagMark*: true
+
+
+
+
+

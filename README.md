@@ -4,7 +4,7 @@ Extract word by word all important text and meta data from an html page.  Save b
 
 
 ## Extracted Data
-An example can be found in [htmlexample.html] (htmlexample.html)
+An example can be found in [htmlexample.html] (https://github.com/glienard/html-to-sql/blob/master/htmlexample.html)
 
 ### HEAD
 #### base
@@ -106,7 +106,7 @@ An example can be found in [htmlexample.html] (htmlexample.html)
 * *TagU*:true
 
 ## Result
-The expected results of  [htmlexample.html] (htmlexample.html) can be found in [resultsexample.xlsx] (resultsexpample.xlsx)
+The expected results of  [htmlexample.html] (https://github.com/glienard/html-to-sql/blob/master/htmlexample.html) can be found in [resultsexample.xlsx] (https://github.com/glienard/html-to-sql/blob/master/resultsexample.xlsx)
 
 ### Page
 Specific page wide properties independent of words used:

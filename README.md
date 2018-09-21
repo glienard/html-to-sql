@@ -4,6 +4,8 @@ Extract word by word all important text and meta data from an html page.  Save b
 
 
 ## Extracted Data
+An example can be found in [htmlexample.html] (htmlexample.html)
+
 ### HEAD
 #### base
 * *href*: add to Links with Type base. Use only the first one (if there are multiple). 
@@ -104,6 +106,8 @@ Extract word by word all important text and meta data from an html page.  Save b
 * *TagU*:true
 
 ## Result
+The expected results of  [htmlexample.html] (htmlexample.html) can be found in [resultsexample.xlsx] (resultsexpample.xlsx)
+
 ### Page
 Specific page wide properties independent of words used:
 * NoFollow: bool default false
@@ -112,6 +116,7 @@ Specific page wide properties independent of words used:
 * NoImageIndex: bool default false
 * NoSnippet: bool default false
 * Lang: string
+* Country: string
 
 ### Links
 Dictionary<string, string>: List of urls found with their LinkType
@@ -124,7 +129,8 @@ Dictionary<string, string>: List of urls found with their LinkType
   * area
   * canonical
   * img
-  
+* NoFollow: bool: true if attribute rel=nofollow is found. 
+
 ### Words
 Object that stores all words, word by word, in order of appearance with their enclosed tags.
 * *Word*: string cannot contain whitespace. It cannot contain punctuation marks except for hyphens and dots if they are immediatly followed by another character.  eg 

@@ -119,7 +119,7 @@ Specific page wide properties independent of words used:
 * Country: string
 
 ### Links
-Dictionary<string, string>: List of urls found with their LinkType
+Dictionary: Dictionary of urls (key) found with their LinkType and NoFollow bool
 * LinkTypes:
   * base
   * http-equiv

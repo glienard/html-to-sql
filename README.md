@@ -1,54 +1,6 @@
 # html-to-sql
 Extract word by word all important text and meta data from an html page.  Save billions of html pages in a structured way in a sql database so you can perform analysis on words and tags,  minimizing storage space required and maximizing performance and still be able to reconstruct the html page with the same text, including punctuation marks and tags. 
 
-## Result
-### Page
-Specific page wide properties independent of words used:
-* NoFollow: bool default false
-* NoIndex: bool default false
-* NoArchive: bool default false
-* NoImageIndex: bool default false
-* NoSnippet: bool default false
-* Lang: string
-
-### Links
-Dictionary<string, string>: List of urls found with their LinkType
-* LinkTypes:
-  * base
-  * http-equiv
-  * frame
-  * iframe
-  * a
-  * area
-  * canonical
-  * img
-  
-### Words
-Object that stores all words, word by word, in order of appearance with their enclosed tags.
-* *Word*: string cannot contain whitespace. It cannot contain punctuation marks except for hyphens and dots if they are immediatly followed by another character.  eg 
-  * **M.A.S.H.**: M.A.S.H
-  * **finished.**: finished 
-  * **mother-in-law**: mother-in-law
-  * **mother- and I**: mother
-* *PunctuationMarkBefore*: nchar(1) string: if a punctuation mark proceeds the word, store it here (only the last)
-* *PunctuationMarkAfter*: nchar(1) string: if a punctuation mark comes after the word, store it here (only the first)
-* *TagTitle*: bool: is enclosed in the head title tag
-* *TagMetaDescription*: bool: is enclosed in the meta tag
-* *TagMetaKeywords*: bool: is enclosed in the meta tag
-* *TagA*: bool: is enclosed in (parent) A tag
-* *Href*: string: stores the href of A tags, AREA tags
-* *TagArea*: bool: is enclosed in (parent) AREA tag
-* *TagH1*: bool: is enclosed in (parent) H1 tag
-* *TagH2*: bool: is enclosed in (parent) H2 tag
-* *TagH3*: bool: is enclosed in (parent) H3 tag
-* *TagH4*: bool: is enclosed in (parent) H4 tag
-* *TagH5*: bool: is enclosed in (parent) H5 tag
-* *TagH6*: bool: is enclosed in (parent) H6 tag
-* *TagB*: bool: is enclosed in (parent) B tag
-* ... (see Extracted Data below)
-* *isHidden*: bool: if text is hidden, this should be true
-  * css display:none
-  * css display:hidden
 
 
 ## Extracted Data
@@ -74,7 +26,7 @@ Object that stores all words, word by word, in order of appearance with their en
 #### meta language or language-content
 < meta name="language" content="en" >
 < meta name="language-content" content="en" >
-*Page.Lang* = content.
+*Page.Lang* = content
 
 #### frame
 * *src*: add to Links with type frame
@@ -150,6 +102,61 @@ Object that stores all words, word by word, in order of appearance with their en
 * *TagSup*:true
 #### u
 * *TagU*:true
+
+## Result
+### Page
+Specific page wide properties independent of words used:
+* NoFollow: bool default false
+* NoIndex: bool default false
+* NoArchive: bool default false
+* NoImageIndex: bool default false
+* NoSnippet: bool default false
+* Lang: string
+
+### Links
+Dictionary<string, string>: List of urls found with their LinkType
+* LinkTypes:
+  * base
+  * http-equiv
+  * frame
+  * iframe
+  * a
+  * area
+  * canonical
+  * img
+  
+### Words
+Object that stores all words, word by word, in order of appearance with their enclosed tags.
+* *Word*: string cannot contain whitespace. It cannot contain punctuation marks except for hyphens and dots if they are immediatly followed by another character.  eg 
+  * **M.A.S.H.**: M.A.S.H
+  * **finished.**: finished 
+  * **mother-in-law**: mother-in-law
+  * **mother- and I**: mother
+* *PunctuationMarkBefore*: nchar(1) string: if a punctuation mark proceeds the word, store it here (only the last)
+* *PunctuationMarkAfter*: nchar(1) string: if a punctuation mark comes after the word, store it here (only the first)
+* *FirstLetterUppercase*: bool: true if the first letter of the word is in uppercase.
+* *AllInUpperCase*: bool: true if all letters of the word are in uppercase
+* *TagTitle*: bool: is enclosed in the head title tag
+* *TagMetaDescription*: bool: is enclosed in the meta tag
+* *TagMetaKeywords*: bool: is enclosed in the meta tag
+* *TagA*: bool: is enclosed in (parent) A tag
+* *Href*: string: stores the href of A tags, AREA tags
+* *TagArea*: bool: is enclosed in (parent) AREA tag
+* *TagH1*: bool: is enclosed in (parent) H1 tag
+* *TagH2*: bool: is enclosed in (parent) H2 tag
+* *TagH3*: bool: is enclosed in (parent) H3 tag
+* *TagH4*: bool: is enclosed in (parent) H4 tag
+* *TagH5*: bool: is enclosed in (parent) H5 tag
+* *TagH6*: bool: is enclosed in (parent) H6 tag
+* *TagB*: bool: is enclosed in (parent) B tag
+* ... (see Extracted Data below)
+* *isHidden*: bool: if text is hidden, this should be true
+  * css display:none
+  * css display:hidden
+* *Lang*: if a tag contains an attribute lang, this should be the lang part.
+* *Country*: if a tag contains an attribute lang, this should be the country part (if exists).
+
+
 
 
 

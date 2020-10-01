@@ -15,6 +15,11 @@ An example can be found in [htmlexample.html] (https://github.com/glienard/html-
 * *TagMetaDescription*: true
 #### meta keywords
 * *TagMetaKeywords*:true
+
+#### meta charset
+ <meta charset="UTF-8">
+#### meta viewport 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 #### meta http-equiv
 < meta http-equiv="refresh" content="30;URL=http://www.keyboost.com" >: add to Links with Type http-equiv
 #### meta robots
